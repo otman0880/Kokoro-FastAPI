@@ -9,8 +9,11 @@ numpy==1.26.4
 # NLP
 spacy==3.8.5
 
-# PyTorch (CPU build only, works on Render free tier)
+# PyTorch (CPU build for Render free tier)
 torch==2.2.2
 
-# Optional - if repo uses transformers
+# Optional (if used in repo)
 transformers==4.39.3
+
+# Logging
+loguru==0.7.2
