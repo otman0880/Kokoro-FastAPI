@@ -1,8 +1,18 @@
-FROM python:3.11-slim
+FROM python:3.10-slim
 
-WORKDIR /app
-COPY . /app
+WORKDIR /app/ui
 
-RUN pip install poetry && poetry install
+# Install dependencies
+RUN pip install gradio==5.9.1 requests==2.32.3
 
-CMD ["poetry", "run", "uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+# Create necessary directories
+RUN mkdir -p data/inputs data/outputs
+
+# Copy the application files
+COPY . .
+
+ENV API_HOST=kokoro-tts
+ENV API_PORT=8880
+
+# Run the Gradio app
+CMD ["python", "app.py"]
