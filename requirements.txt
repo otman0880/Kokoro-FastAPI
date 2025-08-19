@@ -1,0 +1,16 @@
+fastapi==0.110.0
+uvicorn[standard]==0.29.0
+
+# Core dependencies
+httpx==0.28.1
+pydantic==2.7.1
+numpy==1.26.4
+
+# NLP
+spacy==3.8.5
+
+# PyTorch (CPU build only, works on Render free tier)
+torch==2.2.2
+
+# Optional - if repo uses transformers
+transformers==4.39.3
